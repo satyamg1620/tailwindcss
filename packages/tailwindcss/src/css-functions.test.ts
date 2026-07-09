@@ -904,8 +904,9 @@ describe('theme(…)', () => {
             await compileCss(css`
               @theme default reference {
                 --font-family-sans:
-                  ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-                  Segoe UI Symbol, Noto Color Emoji;
+                  -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Noto Sans,
+                  Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+                  Noto Color Emoji;
               }
               .fam {
                 font-family: theme(fontFamily.sans);
@@ -1154,7 +1155,7 @@ describe('theme(…)', () => {
       test.each([
         [
           'fontFamily.sans',
-          'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
         ],
         ['maxWidth.xs', '20rem'],
         ['transitionTimingFunction.in-out', 'cubic-bezier(.4, 0, .2, 1)'],
